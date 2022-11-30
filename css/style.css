@@ -1,26 +1,28 @@
 /* GENERAL RULES */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #d5dbd8;
+}
+
+
 /* sfondo posteriore dell'applicazione */
 
-.back-topbar{
+.back-topbar {
     background-color: #009688;
-    height: 15vh;
-    position: relative;
-}
-.back-bottombar{
-    background-color: #d5dbd8;
-    height: 85vh;
+    min-height: 15vh;
     position: relative;
 }
 
-.main-app{
-    z-index: 1000;
+
+/* box centrale */
+
+.main-app {
     background-color: #ffffff;
     max-width: 1500px;
     max-height: 875px;
@@ -30,4 +32,45 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.bar {
+    width: 100%;
+    position: relative;
+    height: 65px;
+    z-index: 1000;
+
+}
+
+.top-bar {
+    background-color: #eaeaea;
+
+}
+
+.side {
+    height: 100%;
+}
+
+.left-side-bar {
+    width: 450px;
+}
+
+
+.right-side-bar {
+    width: calc(100% - 450px);
+    background-image: url(/img/mine.jpg);
+    background-color: #009688;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+.chat-bar {
+    background-color: #f3eeea;
+    position: absolute;
+    bottom: 0;
+
 }
