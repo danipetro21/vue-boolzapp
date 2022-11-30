@@ -5,3 +5,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* sfondo posteriore dell'applicazione */
+
+.back-topbar{
+    background-color: #009688;
+    height: 15vh;
+    position: relative;
+}
+.back-bottombar{
+    background-color: #d5dbd8;
+    height: 85vh;
+    position: relative;
+}
+
+.main-app{
+    z-index: 1000;
+    background-color: #ffffff;
+    max-width: 1500px;
+    max-height: 875px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
