@@ -24,6 +24,19 @@
                 <div class="bar top-bar">
                     <div class="left-box">
 
+                        <div class="avatar io">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <span id="user">Daniele Petrollo</span>
+                        </div>
+
+                        <div class="commands">
+                            <li><i class="fa-solid fa-circle-notch"></i></li>
+                            <li><i class="fa-solid fa-message"></i></li>
+                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            
+                        </div>
+
+
                     </div>
                     <div class="right">
 
@@ -41,7 +54,6 @@
 
                             <div class="avatar">
                                 <img :src="contact.avatar" alt="">
-
                             </div>
 
                             <div class="name">
@@ -57,6 +69,11 @@
                                 </span>
                             </div>
 
+                            <!-- <div class="msg-time" v-for="(time,index) in contact.messages">
+                                <span v-if="index === 0">
+                                    {{ time.date }}
+                                </span>
+                            </div> -->
 
                         </div>
 
