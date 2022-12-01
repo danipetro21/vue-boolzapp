@@ -28,7 +28,7 @@ body {
 .main-app {
     background-color: #ffffff;
     max-width: 1500px;
-    max-height: 875px;
+    height: 800px;
     position: absolute;
     left: 0;
     right: 0;
@@ -96,5 +96,25 @@ body {
 .chat{
     width: 100%;
     border-bottom: 1px solid #dadada;
+
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+}
+
+.name span{
+    font-size: 0.7rem;
+    color: rgb(146, 145, 145);
 
 }

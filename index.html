@@ -37,15 +37,29 @@
 
                         <!-- search box -->
 
+                        <div class="box-65 chat" v-for="(contact , index) in contacts">
 
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
-                        <div class="box-65 chat"></div>
+                            <div class="avatar">
+                                <img :src="contact.avatar" alt="">
+
+                            </div>
+
+                            <div class="name">
+
+                                {{ contact.name }}
+
+                                <span class="last-msg" v-for="(msg,index) in contact.messages">
+
+                                    <span v-if="index === 0">
+                                        {{ msg.message }}
+                                    </span>
+
+                                </span>
+                            </div>
+
+
+                        </div>
+
                     </div>
                 </div>
 
@@ -60,7 +74,6 @@
             </div>
 
         </div>
-
     </div>
 
 
