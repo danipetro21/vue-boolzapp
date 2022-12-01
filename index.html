@@ -91,7 +91,10 @@
 
                     <div class="chat-live">
                         
-                        
+                        <span v-for="msg in contacts[activeChat].messages">
+                            <h3>{{ msg.message }}</h3>
+                        </span>
+                    
                         
                     </div>
 
