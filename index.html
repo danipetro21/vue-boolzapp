@@ -80,26 +80,35 @@
                 <!-- parte destra della chat -->
 
                 <div class="side right-side-bar">
+
                     <div class="avatar bar top-bar flex">
                         <img :src="contacts[activeChat].avatar" alt="1" />
                         <span class="chat-user-open">
                             <span>{{ contacts[activeChat].name }}</span>
                             <span class="last-msg">ultimo accesso di recente</span>
                         </span>
-
                     </div>
 
 
                     <div class="chat-live" v-for="msg in contacts[activeChat].messages">
-
                         <div class="msg" :class="msg.status === 'sent' ? 'sent' : 'received'">
                             {{ msg.message }}
                         </div>
-
                     </div>
 
 
                     <div class="bar chat-bar">
+                        <div>
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+
+                        <div class="input-txt">
+                            <input class="send-msg" type="text" v-model="myMsg" @keyup.enter="sendMsg(activeChat)" placeholder="Scrivi un messaggio">
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
 
                     </div>
 

@@ -22,6 +22,7 @@ body {
 .box-65:hover{
 
     background-color: rgb(218, 213, 213);
+
 }
 
 /* sfondo posteriore dell'applicazione */
@@ -45,7 +46,7 @@ body {
 .main-app {
     background-color: #ffffff;
     max-width: 1500px;
-    height: 800px;
+    max-height: 800px;
     position: absolute;
     left: 0;
     right: 0;
@@ -53,6 +54,7 @@ body {
     bottom: 0;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden ;
 }
 
 .bar {
@@ -66,10 +68,8 @@ body {
 .top-bar {
     background-color: #eaeaea;
     position: relative;
-
+    
 }
-
-
 
 .left-box{
     width: 450px;
@@ -77,31 +77,26 @@ body {
     border-right: 1px solid #dadada;
 }
 
-.side {
-    height: 100%;
-}
+
 
 .left-side-bar {
-    width: 450px;
+    max-width: 450px;
 }
 
 
 .right-side-bar {
     width: calc(100% - 450px);
+    height: 100%;
     background-image: url(/img/mine.jpg);
     background-color: #009688;
     position: absolute;
     right: 0;
     top: 0;
 
+    
 }
 
-.chat-bar {
-    background-color: #f3eeea;
-    position: absolute;
-    bottom: 0;
 
-}
 
 /* chat  */
 
@@ -170,8 +165,11 @@ body {
 
 /* chat box  */
 .chat-live{
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+
 }
 
 .msg {
@@ -188,8 +186,31 @@ body {
 
 }
 
-
 .received{
 
     background-color: #ffffff;
+}
+
+/* barra di invio dei messaggi */
+.chat-bar {
+    width: 100%;
+
+    background-color: #f3eeea;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-txt{
+    width: 90%;
+}
+
+.send-msg{
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    border: transparent;
 }

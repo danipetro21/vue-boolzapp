@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activeChat: 0,
+            myMsg: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -167,17 +168,44 @@ createApp({
                     ],
                 }
             ]
-            
 
-            
+
+
         }
     },
     methods: {
-        
-        changeChat(index){
+
+        changeChat(index) {
             this.activeChat = index;
-        }
+        },
+
+        sendMsg(index) {
+
+            if (this.myMsg === "") {
+                return
+
+            } else {
+                this.contacts[index].messages.push({
+                    date: '10/01/2020 15:51:00',
+                    message: this.myMsg,
+                    status: 'sent'
+                });
+
+                //messaggio automatico
+                setTimeout(() => {
+                    this.contacts[index].messages.push({
+                        date: '10/01/2020 15:51:00',
+                        message: 'ok',
+                        status: 'received'
+                    });
+                }, 1000)
 
 
+
+            }
+            //azzera l'input type text
+            this.myMsg = "";
+        },
     }
+
 }).mount("#app");
