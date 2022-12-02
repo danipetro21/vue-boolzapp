@@ -166,7 +166,7 @@ body {
 /* chat box  */
 .chat-live{
     width: 100%;
-
+    
     display: flex;
     flex-direction: column;
 

@@ -5,6 +5,7 @@ createApp({
         return {
             activeChat: 0,
             myMsg: '',
+            textSearch: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -199,13 +200,16 @@ createApp({
                         status: 'received'
                     });
                 }, 1000)
-
-
-
             }
             //azzera l'input type text
             this.myMsg = "";
         },
-    }
+
+    },
+    computed: {
+        filterProductsByName: function() {
+            return this.contacts.filter(contact => !contact.name.toLowerCase().indexOf(this.textSearch))
+        }
+    },
 
 }).mount("#app");

@@ -13,8 +13,9 @@
 <body>
 
     <!-- div generale a cui agganciare VUE  -->
+    
     <div id="app">
-
+        
         <div class="main">
 
             <div class="back-topbar"></div>
@@ -43,36 +44,38 @@
                         <div class="box-65 notification"></div>
 
                         <!-- search box -->
+                        
+                            <input type="text" v-model="textSearch" placeholder="cerca chat">
+                            
+                            <div class="box-65 chat" v-for="(contact , index) in filterProductsByName"
+                                :class="index === activeChat ? 'active' : ''" @click="changeChat(index)">
 
-                        <div class="box-65 chat" v-for="(contact , index) in contacts"
-                            :class="index === activeChat ? 'active' : ''" @click="changeChat(index)">
 
+                                <div class="avatar">
+                                    <img :src="contact.avatar" alt="">
+                                </div>
 
-                            <div class="avatar">
-                                <img :src="contact.avatar" alt="">
-                            </div>
+                                <div class="name">
 
-                            <div class="name">
+                                    {{ contact.name }}
 
-                                {{ contact.name }}
+                                    <span class="last-msg" v-for="(msg,index) in contact.messages">
 
-                                <span class="last-msg" v-for="(msg,index) in contact.messages">
+                                        <span v-if="index === 0">
+                                            {{ msg.message }}
+                                        </span>
 
-                                    <span v-if="index === 0">
-                                        {{ msg.message }}
                                     </span>
+                                </div>
 
-                                </span>
-                            </div>
-
-                            <!-- <div class="msg-time" v-for="(time,index) in contact.messages">
+                                <!-- <div class="msg-time" v-for="(time,index) in contact.messages">
                                 <span v-if="index === 0">
                                     {{ time.date }}
                                 </span>
                             </div> -->
 
-                        </div>
-
+                            </div>
+                   
                     </div>
                 </div>
 
@@ -103,7 +106,8 @@
                         </div>
 
                         <div class="input-txt">
-                            <input class="send-msg" type="text" v-model="myMsg" @keyup.enter="sendMsg(activeChat)" placeholder="Scrivi un messaggio">
+                            <input class="send-msg" type="text" v-model="myMsg" @keyup.enter="sendMsg(activeChat)"
+                                placeholder="Scrivi un messaggio">
                         </div>
 
                         <div>
@@ -118,6 +122,7 @@
             </div>
 
         </div>
+    
     </div>
 
 
