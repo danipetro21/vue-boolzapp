@@ -45,7 +45,7 @@
 
                         <!-- search box -->
                         
-                            <input type="text" v-model="textSearch" placeholder="cerca chat">
+                            <input type="text" v-model="textSearch" placeholder="cerca chat" class="search-box">
                             
                             <div class="box-65 chat" v-for="(contact , index) in filterProductsByName"
                                 :class="index === activeChat ? 'active' : ''" @click="changeChat(index)">
