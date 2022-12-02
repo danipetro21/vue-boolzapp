@@ -169,5 +169,27 @@ body {
 }
 
 /* chat box  */
+.chat-live{
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    width: calc(100% / 3);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px 100px;
+}
+
+.sent{
+
+    align-self: flex-end;
+    background-color: #d5f9ba;
+
+}
 
 
+.received{
+
+    background-color: #ffffff;
+}

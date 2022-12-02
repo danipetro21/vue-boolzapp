@@ -25,19 +25,19 @@
                 <div class="side left-side-bar">
                     <div class="bar top-bar">
                         <div class="left-box">
-    
+
                             <div class="avatar io">
                                 <img src="img/avatar_io.jpg" alt="">
                                 <span id="user">Daniele Petrollo</span>
                             </div>
-    
+
                             <div class="commands">
                                 <li><i class="fa-solid fa-circle-notch"></i></li>
                                 <li><i class="fa-solid fa-message"></i></li>
                                 <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                             </div>
                         </div>
-    
+
                     </div>
                     <div class="chat-cotainer">
                         <div class="box-65 notification"></div>
@@ -80,28 +80,27 @@
                 <!-- parte destra della chat -->
 
                 <div class="side right-side-bar">
-                    <div class="avatar bar top-bar flex"> 
-                        <img  :src="contacts[activeChat].avatar" alt="1" />
+                    <div class="avatar bar top-bar flex">
+                        <img :src="contacts[activeChat].avatar" alt="1" />
                         <span class="chat-user-open">
                             <span>{{ contacts[activeChat].name }}</span>
                             <span class="last-msg">ultimo accesso di recente</span>
                         </span>
-                        
+
                     </div>
 
-                    <div class="chat-live">
-                        
-                        <span v-for="msg in contacts[activeChat].messages">
-                            <h3>{{ msg.message }}</h3>
-                        </span>
-                    
-                        
+
+                    <div class="chat-live" v-for="msg in contacts[activeChat].messages">
+
+                        <div class="msg" :class="msg.status === 'sent' ? 'sent' : 'received'">
+                            {{ msg.message }}
+                        </div>
+
                     </div>
+
 
                     <div class="bar chat-bar">
-                        <h3>
 
-                        </h3>
                     </div>
 
                 </div>
