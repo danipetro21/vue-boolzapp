@@ -184,30 +184,29 @@ createApp({
 
             if (this.myMsg === "") {
                 return
+            }
+            this.contacts[index].messages.push({
+                date: '10/01/2020 15:51:00',
+                message: this.myMsg,
+                status: 'sent'
+            });
 
-            } else {
+            //messaggio automatico
+            setTimeout(() => {
                 this.contacts[index].messages.push({
                     date: '10/01/2020 15:51:00',
-                    message: this.myMsg,
-                    status: 'sent'
+                    message: 'ok',
+                    status: 'received'
                 });
+            }, 1000)
 
-                //messaggio automatico
-                setTimeout(() => {
-                    this.contacts[index].messages.push({
-                        date: '10/01/2020 15:51:00',
-                        message: 'ok',
-                        status: 'received'
-                    });
-                }, 1000)
-            }
             //azzera l'input type text
             this.myMsg = "";
         },
 
     },
     computed: {
-        filterProductsByName: function() {
+        filterProductsByName: function () {
             return this.contacts.filter(contact => !contact.name.toLowerCase().indexOf(this.textSearch))
         }
     },

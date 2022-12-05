@@ -25,6 +25,10 @@ body {
 
 }
 
+.active{
+    background-color: rgb(218, 213, 213);
+}
+
 /* sfondo posteriore dell'applicazione */
 
 .back-topbar {
@@ -222,3 +226,4 @@ body {
     border-radius: 5px;
     border: transparent;
 }
+
